@@ -1,0 +1,15 @@
+button {
+  border: 2px solid white;
+  color: white;
+  letter-spacing: 3px;
+  font-family: $font_3;
+  text-transform: uppercase;
+  padding: 6px $gutter;
+  outline: none !important;
+  transition: background-color 300ms;
+
+  &:hover {
+    background-color: white;
+    color: $dark;
+  }
+}

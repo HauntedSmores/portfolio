@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,700|Palanquin+Dark:500|VT323');
+
+html, body, h1, h2, h3, h4, h5, h6, p {
+  box-sizing: border-box;
+  font-size: $base-font-size;
+  font-weight: initial;
+  margin: 0;
+  -webkit-margin-after: initial;
+  -webkit-margin-before: initial;
+  -webkit-margin-end: initial;
+  -webkit-margin-start: initial;
+}
+
+
+
+html, body {
+    height: 100%;
+    font-size: $base-font-size;
+}
+
+h1 {
+	position: relative;
+	font-size: 48px;
+	letter-spacing: 0;
+	line-height: 84px;
+	color: $blue;
+	font-family: $font_1;
+	letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 48px;
+  font-family: $font_2;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-size: 1.125rem;
+  line-height: 1.33333333rem;
+  font-family: $font_3;
+}
+
+h4, .h4 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-family: $font_1;
+  letter-spacing: 1px;
+}
+
+p {
+	font-family: $font_2;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+code {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+a {
+  font-family: $font_2;
+  font-size: 18px;
+  line-height: 24px;
+  color: white;
+}

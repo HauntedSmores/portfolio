@@ -1,29 +1,69 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+<div id="app" @click="pop">
+    <!-- <h1 class="app__title">
+        <span class="text-green">D</span>
+        <span class="text-purple">arren </span>
+        <span class="text-pink">S</span>egal
+    </h1> -->
+    <div class="app__container">
+        <Links />
+        <transition name="fade" mode="out-in">
+            <router-view></router-view>
+        </transition>
     </div>
-    <router-view/>
-  </div>
+    <Pixi />
+</div>
 </template>
 
+<script>
+import Pixi from "@/components/Pixi";
+import Links from "@/components/Links";
+
+export default {
+    name: "App",
+    components: {
+        Pixi,
+        Links
+    },
+	methods: {
+		pop($event) {
+			this.$bus.$emit('pop', $event);
+		}
+	}
+};
+</script>
+
 <style lang="scss">
+@import '~@/assets/scss/main';
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $dark;
+    position: relative;
+    height: 100vh;
+    overflow: auto;
+    padding-top: $gutter * 4;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+
+.app__title {
+    text-align: center;
+}
+
+.app__container {
+    display: flex;
+    max-width: $large-break;
+    margin: 0 auto;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: all 200ms;
+}
+.fade-enter {
+    transform: translateY(5%);
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
 }
 </style>
