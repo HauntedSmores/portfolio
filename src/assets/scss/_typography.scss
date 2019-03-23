@@ -48,10 +48,14 @@ h4, .h4 {
   letter-spacing: 1px;
 }
 
-p {
-	font-family: $font_2;
+@mixin paragraph {
+  font-family: $font_2;
 	font-size: 18px;
 	line-height: 24px;
+}
+
+p, i {
+  @include paragraph;
 }
 
 code {

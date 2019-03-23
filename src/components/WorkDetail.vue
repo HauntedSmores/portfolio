@@ -5,9 +5,13 @@
     </div>
     <div class="work-detail__container">
 
-      <div class="mb-6">
+      <div class="mb-2">
         <h2>{{ entry.fields.name }}</h2>
         <a :href="entry.fields.link">{{ entry.fields.link }}</a>
+      </div>
+
+      <div class="work-detail__skills flex mb-6">
+        <i v-for="skill of skills" class="work-detail__skill" :style="{ backgroundColor: skill.color }">{{ skill.name }}</i>
       </div>
 
       <div ref="glide" class="glide">
@@ -52,7 +56,6 @@
     props: ['entry'],
 		data() {
 			return {
-				entries: []
 			}
 		},
 		mounted() {
@@ -66,8 +69,25 @@
     },
     methods: {
       close() {
-        console.log('Close')
         this.$emit('close')
+      }
+    },
+    computed: {
+      skills() {
+        return this.entry.fields.skills.map(skill => {
+          switch (skill) {
+            case 'Angular':
+              return { name: skill, color: '#FFAFD7' }
+            case 'Vue.js':
+              return { name: skill, color: '#86F4B6' }
+            case 'React':
+              return { name: skill, color: 'blue' }
+            case 'WordPress':
+              return { name: skill, color: '#2372a0' }
+            default:
+              return { name: skill, color: 'white' }
+          }
+        })
       }
     }
 	}
@@ -82,7 +102,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    // transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -102,13 +121,21 @@
       top: 0;
       z-index: 1;
     }
+
+    &__skill {
+      // font-size: 12px;
+      font-weight: bold;
+      color: $dark;
+      margin-right: $gutter;
+      border-radius: 20px;
+      padding: 8px 12px;
+    }
   }
 
   .glide {
     img {
-      object-fit: contain;
-      width: 100%;
-      height: 700px;
+      display: block;
+      margin: 0 auto;
     }
 
     &__track,
