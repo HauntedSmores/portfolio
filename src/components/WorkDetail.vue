@@ -80,16 +80,14 @@
   
   .work-detail {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    // transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
     overflow: auto;
     padding: ($gutter * 2);
     background-color: $dark;
-    // border-radius: 12px;
-    // border: 4px solid $purple;
     z-index: 1;
 
     &__container {
@@ -102,6 +100,7 @@
       justify-content: flex-end;
       position: sticky;
       top: 0;
+      z-index: 1;
     }
   }
 

@@ -29,7 +29,7 @@ export default {
     
     this.$el.appendChild(this.app.view);
 
-	this.$bus.$on('pop', this.pop);
+    this.$bus.$on('pop', this.pop);
   },
   methods: {
     pop(event) {
