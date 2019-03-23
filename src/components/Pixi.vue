@@ -11,7 +11,7 @@ export default {
   data() {
     return {
       app: null,
-      colors: ["86F4B6", "90E0F3", "B8B3E9", "D999B9"]
+      colors: ["86F4B6", "90E0F3", "B8B3E9", "FFAFD7"]
     };
   },
   mounted() {
