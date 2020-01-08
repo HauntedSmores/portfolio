@@ -11,7 +11,13 @@
       </div>
 
       <div class="work-detail__skills flex mb-6">
-        <i v-for="skill of skills" class="work-detail__skill" :style="{ backgroundColor: skill.color }">{{ skill.name }}</i>
+        <i :key="skill.name"
+          v-for="skill of skills"
+          class="work-detail__skill"
+          :style="{ backgroundColor: skill.color }"
+        >
+          {{ skill.name }}
+        </i>
       </div>
 
       <div ref="glide" class="glide">
@@ -22,7 +28,10 @@
   
         <div class="glide__track" data-glide-el="track">
           <div class="glide__slides">
-            <div v-for="image of entry.fields.images" class="glide__slide">
+            <div :key="image.sys.id"
+              v-for="image of entry.fields.images"
+              class="glide__slide"
+            >
               <img :src="image.fields.file.url" alt="">
             </div>
           </div>
@@ -37,12 +46,14 @@
   
       </div>
   
-      <h3>Code Example</h3>
-      <pre v-if="entry.fields.codeExample">
-        <code class="js">
-          {{ entry.fields.codeExample }}
-        </code>
-      </pre>
+      <div v-if="entry.fields.codeExample">
+        <h3>Code Example</h3>
+        <pre>
+          <code class="js">
+            {{ entry.fields.codeExample }}
+          </code>
+        </pre>
+      </div>
     </div>
   </div>
 </template>
@@ -52,7 +63,7 @@
   import Glide from '@glidejs/glide'
 
 	export default {
-    name: 'Work',
+    name: 'WorkDetail',
     props: ['entry'],
 		data() {
 			return {

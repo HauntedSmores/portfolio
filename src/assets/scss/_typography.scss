@@ -22,15 +22,16 @@ h1 {
 	position: relative;
 	font-size: 48px;
 	letter-spacing: 0;
-	line-height: 84px;
+	line-height: 1.25;
 	color: $blue;
 	font-family: $font_1;
-	letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
 }
 
 h2 {
   font-size: 36px;
-  line-height: 48px;
+  line-height: 1.25;
   font-family: $font_2;
   letter-spacing: 1px;
 }
@@ -51,7 +52,8 @@ h4, .h4 {
 @mixin paragraph {
   font-family: $font_2;
 	font-size: 18px;
-	line-height: 24px;
+  line-height: 24px;
+  color: white;
 }
 
 p, i {
