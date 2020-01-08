@@ -55,6 +55,7 @@ export default {
     display: flex;
     max-width: $large-break;
     margin: 0 auto;
+    padding-left: 22px;
 }
 
 .fade-enter-active, .fade-leave-active {
