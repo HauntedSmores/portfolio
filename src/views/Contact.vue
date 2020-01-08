@@ -1,8 +1,8 @@
 <template lang="html">
-		<div id="contact">
-			<h2>Contact</h2>
-			<p>me@darren-segal.com</p>
-		</div>
+	<div id="contact">
+		<h2>Contact</h2>
+		<p>me@darren-segal.com</p>
+	</div>
 </template>
 
 <script>
