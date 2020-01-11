@@ -1,7 +1,7 @@
 <template lang="html">
 		<div id="skills">
 			<h2>Skills</h2>
-			<Skill :key="entry.sys.id" v-for="entry of entries" :data="entry"/>
+			<Skill v-for="entry of entries" :skill="entry"/>
 		</div>
 </template>
 

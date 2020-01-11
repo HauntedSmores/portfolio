@@ -1,34 +1,35 @@
 <template lang="html">
-  <div>
-    <p>{{ data.fields.name }}</p>
-    <div class="bar">
-      <div class="inner" :style="{width: bar}"></div>
+  <transition>
+    <div>
+      <p>{{ skill.fields.name }}</p>
+      <div class="bar">
+        <div class="inner" :style="{width: `${width}%`}"></div>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
 import anime from 'animejs'
 export default {
   name: "Skill",
-  props: ['data'],
+  props: ['skill'],
   data() {
     return {
       width: 0
     }
   },
   mounted() {
-    console.log(this.bar)
     anime({
-      targets: {width: this.width},
-      width: [0,this.bar],
-      duration: 2000,
-      delay: 1000
+      targets: this.$data,
+      width: this.bar,
+      easing: 'easeOutQuint',
+      duration: 1500
     })
   },
   computed: {
     bar() {
-      return Math.round((this.data.fields.level / 5) * 100) + "%"
+      return Math.round((this.skill.fields.level / 5) * 100)
     }
   }
 };
