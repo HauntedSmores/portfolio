@@ -19,7 +19,7 @@ export default {
 	},
   mounted() {
     client
-      .getEntries({ content_type: "skill" })
+      .getEntries({ content_type: "skill", order: 'sys.createdAt' })
       .then(data => {
         this.entries = data.items
       })
