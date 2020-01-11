@@ -39,7 +39,7 @@ export default {
 @import "~@/assets/scss/variables";
 
 .bar {
-  height: 50px;
+  height: 20px;
   border: 2px solid $green;
   margin-bottom: 48px;
 }

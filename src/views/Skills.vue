@@ -36,5 +36,9 @@ export default {
   width: 100%;
   height: 500px;
   color: $green;
+
+  h2 {
+    margin-bottom: 24px;
+  }
 }
 </style>
